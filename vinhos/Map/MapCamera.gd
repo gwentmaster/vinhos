@@ -63,7 +63,10 @@ func _unhandled_input(event: InputEvent) -> void:
 				self.drag_flag = false
 
 		# 鼠标滚轮向上, 放大画面, 并将主视角移至定位点
-		elif event.button_index == BUTTON_WHEEL_UP:
+		elif (
+			event.button_index == BUTTON_WHEEL_UP
+			and not approximate_equal(self.zoom, Vector2.ONE * self.min_zoom, 0.1)
+		):
 			self.target_zoom = min_zoom
 			self.move_in_zoom_flag = true
 			
@@ -78,7 +81,10 @@ func _unhandled_input(event: InputEvent) -> void:
 					break
 
 		# 鼠标滚轮向下, 复原至原始画面
-		elif event.button_index == BUTTON_WHEEL_DOWN:
+		elif (
+			event.button_index == BUTTON_WHEEL_DOWN
+			and not approximate_equal(self.zoom, Vector2.ONE * self.max_zoom, 0.1)
+		):
 			self.target_zoom = max_zoom
 			self.target_position = origin_position
 			self.move_in_zoom_flag = true
