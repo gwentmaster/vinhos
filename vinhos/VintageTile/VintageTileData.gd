@@ -3,9 +3,13 @@
 extends Node
 class_name VintageTileData
 
-# 红, 绿, 蓝, 黄
+
+var Model = preload("res://Model.gd").new()
+
 
 enum DataOrder {Quality=0, Expert=1, Magnate_A=2, Magnate_B=3, Magnate_C=4}
+var ExpertOrder = Model.ExpertFeature  # 红, 绿, 蓝, 黄
+var WineColor = Model.WineColor
 
 
 var DATA = [
