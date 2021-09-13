@@ -1,0 +1,296 @@
+[gd_scene load_steps=24 format=2]
+
+[ext_resource path="res://Map/ExportArea.gd" type="Script" id=1]
+[ext_resource path="res://Map/Button.tscn" type="PackedScene" id=2]
+
+[sub_resource type="StyleBoxFlat" id=1]
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id=2]
+draw_center = false
+corner_radius_top_left = 120
+corner_radius_top_right = 120
+corner_radius_bottom_right = 120
+corner_radius_bottom_left = 120
+
+[sub_resource type="StyleBoxFlat" id=3]
+draw_center = false
+corner_radius_top_left = 120
+corner_radius_top_right = 120
+corner_radius_bottom_right = 120
+corner_radius_bottom_left = 120
+
+[sub_resource type="StyleBoxFlat" id=4]
+draw_center = false
+corner_radius_top_left = 120
+corner_radius_top_right = 120
+corner_radius_bottom_right = 120
+corner_radius_bottom_left = 120
+
+[sub_resource type="StyleBoxFlat" id=5]
+draw_center = false
+corner_radius_top_left = 120
+corner_radius_top_right = 120
+corner_radius_bottom_right = 120
+corner_radius_bottom_left = 120
+
+[sub_resource type="StyleBoxFlat" id=6]
+draw_center = false
+corner_radius_top_left = 120
+corner_radius_top_right = 120
+corner_radius_bottom_right = 120
+corner_radius_bottom_left = 120
+
+[sub_resource type="StyleBoxFlat" id=7]
+draw_center = false
+corner_radius_top_left = 120
+corner_radius_top_right = 120
+corner_radius_bottom_right = 120
+corner_radius_bottom_left = 120
+
+[sub_resource type="StyleBoxFlat" id=8]
+draw_center = false
+corner_radius_top_left = 120
+corner_radius_top_right = 120
+corner_radius_bottom_right = 120
+corner_radius_bottom_left = 120
+
+[sub_resource type="StyleBoxFlat" id=9]
+draw_center = false
+corner_radius_top_left = 120
+corner_radius_top_right = 120
+corner_radius_bottom_right = 120
+corner_radius_bottom_left = 120
+
+[sub_resource type="StyleBoxFlat" id=10]
+draw_center = false
+corner_radius_top_left = 120
+corner_radius_top_right = 120
+corner_radius_bottom_right = 120
+corner_radius_bottom_left = 120
+
+[sub_resource type="StyleBoxFlat" id=11]
+draw_center = false
+corner_radius_top_left = 120
+corner_radius_top_right = 120
+corner_radius_bottom_right = 120
+corner_radius_bottom_left = 120
+
+[sub_resource type="StyleBoxFlat" id=12]
+draw_center = false
+corner_radius_top_left = 120
+corner_radius_top_right = 120
+corner_radius_bottom_right = 120
+corner_radius_bottom_left = 120
+
+[sub_resource type="StyleBoxFlat" id=13]
+draw_center = false
+corner_radius_top_left = 120
+corner_radius_top_right = 120
+corner_radius_bottom_right = 120
+corner_radius_bottom_left = 120
+
+[sub_resource type="StyleBoxFlat" id=14]
+draw_center = false
+corner_radius_top_left = 120
+corner_radius_top_right = 120
+corner_radius_bottom_right = 120
+corner_radius_bottom_left = 120
+
+[sub_resource type="StyleBoxFlat" id=15]
+draw_center = false
+corner_radius_top_left = 120
+corner_radius_top_right = 120
+corner_radius_bottom_right = 120
+corner_radius_bottom_left = 120
+
+[sub_resource type="StyleBoxFlat" id=16]
+draw_center = false
+corner_radius_top_left = 120
+corner_radius_top_right = 120
+corner_radius_bottom_right = 120
+corner_radius_bottom_left = 120
+
+[sub_resource type="StyleBoxFlat" id=17]
+draw_center = false
+corner_radius_top_left = 120
+corner_radius_top_right = 120
+corner_radius_bottom_right = 120
+corner_radius_bottom_left = 120
+
+[sub_resource type="StyleBoxFlat" id=18]
+draw_center = false
+corner_radius_top_left = 120
+corner_radius_top_right = 120
+corner_radius_bottom_right = 120
+corner_radius_bottom_left = 120
+
+[sub_resource type="StyleBoxFlat" id=19]
+draw_center = false
+corner_radius_top_left = 120
+corner_radius_top_right = 120
+corner_radius_bottom_right = 120
+corner_radius_bottom_left = 120
+
+[sub_resource type="StyleBoxFlat" id=20]
+draw_center = false
+corner_radius_top_left = 120
+corner_radius_top_right = 120
+corner_radius_bottom_right = 120
+corner_radius_bottom_left = 120
+
+[sub_resource type="StyleBoxFlat" id=21]
+draw_center = false
+corner_radius_top_left = 120
+corner_radius_top_right = 120
+corner_radius_bottom_right = 120
+corner_radius_bottom_left = 120
+
+[node name="ExportArea" type="Panel"]
+margin_right = 464.0
+margin_bottom = 416.0
+custom_styles/panel = SubResource( 1 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Slots" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Slot00" parent="Slots" instance=ExtResource( 2 )]
+margin_left = 16.0
+margin_top = 8.0
+margin_right = 96.0
+margin_bottom = 88.0
+custom_styles/panel = SubResource( 2 )
+
+[node name="Slot01" parent="Slots" instance=ExtResource( 2 )]
+margin_left = 16.0
+margin_top = 112.0
+margin_right = 96.0
+margin_bottom = 192.0
+custom_styles/panel = SubResource( 3 )
+
+[node name="Slot02" parent="Slots" instance=ExtResource( 2 )]
+margin_left = 16.0
+margin_top = 216.0
+margin_right = 96.0
+margin_bottom = 296.0
+custom_styles/panel = SubResource( 4 )
+
+[node name="Slot03" parent="Slots" instance=ExtResource( 2 )]
+margin_left = 16.0
+margin_top = 312.0
+margin_right = 96.0
+custom_styles/panel = SubResource( 5 )
+
+[node name="Slot10" parent="Slots" instance=ExtResource( 2 )]
+margin_left = 104.0
+margin_top = 8.0
+margin_right = 184.0
+margin_bottom = 88.0
+custom_styles/panel = SubResource( 6 )
+
+[node name="Slot11" parent="Slots" instance=ExtResource( 2 )]
+margin_left = 104.0
+margin_top = 112.0
+margin_right = 184.0
+margin_bottom = 192.0
+custom_styles/panel = SubResource( 7 )
+
+[node name="Slot12" parent="Slots" instance=ExtResource( 2 )]
+margin_left = 104.0
+margin_top = 216.0
+margin_right = 184.0
+margin_bottom = 296.0
+custom_styles/panel = SubResource( 8 )
+
+[node name="Slot13" parent="Slots" instance=ExtResource( 2 )]
+margin_left = 104.0
+margin_top = 312.0
+margin_right = 184.0
+custom_styles/panel = SubResource( 9 )
+
+[node name="Slot20" parent="Slots" instance=ExtResource( 2 )]
+margin_left = 192.0
+margin_top = 8.0
+margin_right = 272.0
+margin_bottom = 88.0
+custom_styles/panel = SubResource( 10 )
+
+[node name="Slot21" parent="Slots" instance=ExtResource( 2 )]
+margin_left = 192.0
+margin_top = 112.0
+margin_right = 272.0
+margin_bottom = 192.0
+custom_styles/panel = SubResource( 11 )
+
+[node name="Slot22" parent="Slots" instance=ExtResource( 2 )]
+margin_left = 192.0
+margin_top = 216.0
+margin_right = 272.0
+margin_bottom = 296.0
+custom_styles/panel = SubResource( 12 )
+
+[node name="Slot23" parent="Slots" instance=ExtResource( 2 )]
+margin_left = 192.0
+margin_top = 312.0
+margin_right = 272.0
+custom_styles/panel = SubResource( 13 )
+
+[node name="Slot30" parent="Slots" instance=ExtResource( 2 )]
+margin_left = 288.0
+margin_top = 8.0
+margin_right = 368.0
+margin_bottom = 88.0
+custom_styles/panel = SubResource( 14 )
+
+[node name="Slot31" parent="Slots" instance=ExtResource( 2 )]
+margin_left = 288.0
+margin_top = 112.0
+margin_right = 368.0
+margin_bottom = 192.0
+custom_styles/panel = SubResource( 15 )
+
+[node name="Slot32" parent="Slots" instance=ExtResource( 2 )]
+margin_left = 288.0
+margin_top = 216.0
+margin_right = 368.0
+margin_bottom = 296.0
+custom_styles/panel = SubResource( 16 )
+
+[node name="Slot33" parent="Slots" instance=ExtResource( 2 )]
+margin_left = 288.0
+margin_top = 312.0
+margin_right = 368.0
+custom_styles/panel = SubResource( 17 )
+
+[node name="Slot40" parent="Slots" instance=ExtResource( 2 )]
+margin_left = 376.0
+margin_top = 8.0
+margin_right = 456.0
+margin_bottom = 88.0
+custom_styles/panel = SubResource( 18 )
+
+[node name="Slot41" parent="Slots" instance=ExtResource( 2 )]
+margin_left = 376.0
+margin_top = 112.0
+margin_right = 456.0
+margin_bottom = 192.0
+custom_styles/panel = SubResource( 19 )
+
+[node name="Slot42" parent="Slots" instance=ExtResource( 2 )]
+margin_left = 376.0
+margin_top = 216.0
+margin_right = 456.0
+margin_bottom = 296.0
+custom_styles/panel = SubResource( 20 )
+
+[node name="Slot43" parent="Slots" instance=ExtResource( 2 )]
+margin_left = 376.0
+margin_top = 312.0
+margin_right = 456.0
+custom_styles/panel = SubResource( 21 )
