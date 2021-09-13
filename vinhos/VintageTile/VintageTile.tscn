@@ -15,8 +15,8 @@ __meta__ = {
 }
 
 [node name="TextureRect" type="TextureRect" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
+margin_right = 533.0
+margin_bottom = 533.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
