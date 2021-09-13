@@ -25,6 +25,11 @@ _global_script_classes=[ {
 "path": "res://Model.gd"
 }, {
 "base": "Panel",
+"class": "VineyardTile",
+"language": "GDScript",
+"path": "res://VineyardTile/VineyardTile.gd"
+}, {
+"base": "Panel",
 "class": "VintageTile",
 "language": "GDScript",
 "path": "res://VintageTile/VintageTile.gd"
@@ -38,6 +43,7 @@ _global_script_class_icons={
 "Map": "",
 "MapCamera": "",
 "Model": "",
+"VineyardTile": "",
 "VintageTile": "",
 "VintageTileData": ""
 }
