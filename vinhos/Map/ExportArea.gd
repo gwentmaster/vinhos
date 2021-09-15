@@ -1,6 +1,11 @@
 extends Panel
+class_name ExportArea
 
-func _ready():
-	for i in [2, 3]:
-		for j in range(5):
-			$Slots.get_node("Slot" + str(j) + str(i)).set_disabled(false)
+
+var quality_limits = [
+	[8, 7, 6, 5],
+	[9, 8, 7, 6],
+	[10, 9, 8, 7],
+	[11, 10, 9, 8],
+	[12, 11, 10, 9]
+]

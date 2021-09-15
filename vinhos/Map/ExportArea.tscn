@@ -147,8 +147,9 @@ corner_radius_bottom_right = 120
 corner_radius_bottom_left = 120
 
 [node name="ExportArea" type="Panel"]
-margin_right = 464.0
-margin_bottom = 416.0
+margin_right = 207.0
+margin_bottom = 355.0
+mouse_filter = 2
 custom_styles/panel = SubResource( 1 )
 script = ExtResource( 1 )
 __meta__ = {
@@ -159,138 +160,146 @@ __meta__ = {
 [node name="Slots" type="Control" parent="."]
 margin_right = 40.0
 margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Slot00" parent="Slots" instance=ExtResource( 2 )]
-margin_left = 16.0
-margin_top = 8.0
-margin_right = 96.0
-margin_bottom = 88.0
+margin_left = 7.0
+margin_top = 177.0
+margin_right = 41.0
+margin_bottom = 211.0
 custom_styles/panel = SubResource( 2 )
 
 [node name="Slot01" parent="Slots" instance=ExtResource( 2 )]
-margin_left = 16.0
-margin_top = 112.0
-margin_right = 96.0
-margin_bottom = 192.0
+margin_left = 7.0
+margin_top = 221.298
+margin_right = 41.0
+margin_bottom = 255.298
 custom_styles/panel = SubResource( 3 )
 
 [node name="Slot02" parent="Slots" instance=ExtResource( 2 )]
-margin_left = 16.0
-margin_top = 216.0
-margin_right = 96.0
-margin_bottom = 296.0
+margin_left = 7.0
+margin_top = 265.745
+margin_right = 41.0
+margin_bottom = 299.745
 custom_styles/panel = SubResource( 4 )
 
 [node name="Slot03" parent="Slots" instance=ExtResource( 2 )]
-margin_left = 16.0
-margin_top = 312.0
-margin_right = 96.0
+margin_left = 7.0
+margin_top = 309.757
+margin_right = 41.0
+margin_bottom = 343.757
 custom_styles/panel = SubResource( 5 )
 
 [node name="Slot10" parent="Slots" instance=ExtResource( 2 )]
-margin_left = 104.0
-margin_top = 8.0
-margin_right = 184.0
-margin_bottom = 88.0
+margin_left = 46.3749
+margin_top = 177.0
+margin_right = 80.3749
+margin_bottom = 211.0
 custom_styles/panel = SubResource( 6 )
 
 [node name="Slot11" parent="Slots" instance=ExtResource( 2 )]
-margin_left = 104.0
-margin_top = 112.0
-margin_right = 184.0
-margin_bottom = 192.0
+margin_left = 46.3749
+margin_top = 221.298
+margin_right = 80.3749
+margin_bottom = 255.298
 custom_styles/panel = SubResource( 7 )
 
 [node name="Slot12" parent="Slots" instance=ExtResource( 2 )]
-margin_left = 104.0
-margin_top = 216.0
-margin_right = 184.0
-margin_bottom = 296.0
+margin_left = 46.3749
+margin_top = 265.745
+margin_right = 80.3749
+margin_bottom = 299.745
 custom_styles/panel = SubResource( 8 )
 
 [node name="Slot13" parent="Slots" instance=ExtResource( 2 )]
-margin_left = 104.0
-margin_top = 312.0
-margin_right = 184.0
+margin_left = 46.3749
+margin_top = 309.757
+margin_right = 80.3749
+margin_bottom = 343.757
 custom_styles/panel = SubResource( 9 )
 
 [node name="Slot20" parent="Slots" instance=ExtResource( 2 )]
-margin_left = 192.0
-margin_top = 8.0
-margin_right = 272.0
-margin_bottom = 88.0
+margin_left = 85.9254
+margin_top = 177.0
+margin_right = 119.925
+margin_bottom = 211.0
 custom_styles/panel = SubResource( 10 )
 
 [node name="Slot21" parent="Slots" instance=ExtResource( 2 )]
-margin_left = 192.0
-margin_top = 112.0
-margin_right = 272.0
-margin_bottom = 192.0
+margin_left = 85.9254
+margin_top = 221.298
+margin_right = 119.925
+margin_bottom = 255.298
 custom_styles/panel = SubResource( 11 )
 
 [node name="Slot22" parent="Slots" instance=ExtResource( 2 )]
-margin_left = 192.0
-margin_top = 216.0
-margin_right = 272.0
-margin_bottom = 296.0
+margin_left = 85.9254
+margin_top = 265.745
+margin_right = 119.925
+margin_bottom = 299.745
 custom_styles/panel = SubResource( 12 )
 
 [node name="Slot23" parent="Slots" instance=ExtResource( 2 )]
-margin_left = 192.0
-margin_top = 312.0
-margin_right = 272.0
+margin_left = 85.9254
+margin_top = 309.757
+margin_right = 119.925
+margin_bottom = 343.757
 custom_styles/panel = SubResource( 13 )
 
 [node name="Slot30" parent="Slots" instance=ExtResource( 2 )]
-margin_left = 288.0
-margin_top = 8.0
-margin_right = 368.0
-margin_bottom = 88.0
+margin_left = 125.255
+margin_top = 177.0
+margin_right = 159.255
+margin_bottom = 211.0
 custom_styles/panel = SubResource( 14 )
 
 [node name="Slot31" parent="Slots" instance=ExtResource( 2 )]
-margin_left = 288.0
-margin_top = 112.0
-margin_right = 368.0
-margin_bottom = 192.0
+margin_left = 125.255
+margin_top = 221.298
+margin_right = 159.255
+margin_bottom = 255.298
 custom_styles/panel = SubResource( 15 )
 
 [node name="Slot32" parent="Slots" instance=ExtResource( 2 )]
-margin_left = 288.0
-margin_top = 216.0
-margin_right = 368.0
-margin_bottom = 296.0
+margin_left = 125.255
+margin_top = 265.745
+margin_right = 159.255
+margin_bottom = 299.745
 custom_styles/panel = SubResource( 16 )
 
 [node name="Slot33" parent="Slots" instance=ExtResource( 2 )]
-margin_left = 288.0
-margin_top = 312.0
-margin_right = 368.0
+margin_left = 125.255
+margin_top = 309.757
+margin_right = 159.255
+margin_bottom = 343.757
 custom_styles/panel = SubResource( 17 )
 
 [node name="Slot40" parent="Slots" instance=ExtResource( 2 )]
-margin_left = 376.0
-margin_top = 8.0
-margin_right = 456.0
-margin_bottom = 88.0
+margin_left = 163.74
+margin_top = 177.0
+margin_right = 197.74
+margin_bottom = 211.0
 custom_styles/panel = SubResource( 18 )
 
 [node name="Slot41" parent="Slots" instance=ExtResource( 2 )]
-margin_left = 376.0
-margin_top = 112.0
-margin_right = 456.0
-margin_bottom = 192.0
+margin_left = 163.74
+margin_top = 221.298
+margin_right = 197.74
+margin_bottom = 255.298
 custom_styles/panel = SubResource( 19 )
 
 [node name="Slot42" parent="Slots" instance=ExtResource( 2 )]
-margin_left = 376.0
-margin_top = 216.0
-margin_right = 456.0
-margin_bottom = 296.0
+margin_left = 163.74
+margin_top = 265.745
+margin_right = 197.74
+margin_bottom = 299.745
 custom_styles/panel = SubResource( 20 )
 
 [node name="Slot43" parent="Slots" instance=ExtResource( 2 )]
-margin_left = 376.0
-margin_top = 312.0
-margin_right = 456.0
+margin_left = 163.74
+margin_top = 309.757
+margin_right = 197.74
+margin_bottom = 343.757
 custom_styles/panel = SubResource( 21 )
