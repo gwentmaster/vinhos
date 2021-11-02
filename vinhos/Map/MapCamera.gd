@@ -5,10 +5,8 @@ class_name MapCamera
 # 画面缩放
 var max_zoom: float = 1
 var min_zoom: float = 0.5
-var target_zoom = 1
-var target_position = Vector2(960, 540)
-var origin_position = Vector2(960, 540)
-var move_in_zoom_flag = false
+var origin_position = Vector2(960, 540)  # 视角初始位置, 用于画面缩小时视角复位
+var in_zooming = false  # 视角是否在缩放中
 var LOCATE_POINT = {
 	"region_top": {"position": Vector2(544, 334), "rect": {"left": 0, "right": 512, "top": 0, "bottom": 540}},
 	"region_bottom": {"position": Vector2(544, 746), "rect": {"left": 0, "right": 512, "top": 540, "bottom": 1080}},
@@ -44,6 +42,47 @@ func approximate_equal(a: Vector2, b: Vector2, threshold: float = 0.01) -> bool:
 	return false
 
 
+func zoom_to(zoom: Vector2, position: Vector2) -> void:
+	"""平缓处理画面缩放
+	
+	Args:
+		zoom: 视角目标缩放
+		position: 视角目标位置
+	"""
+
+	# 缩放开始
+	var zoom_complete = false
+	var pos_complete = false
+	var delta = 0.02
+	self.in_zooming = true
+	
+	while (zoom_complete == false) or (pos_complete == false):
+
+		# 视角缩放未完成, 继续缩放直至达到容许范围
+		if zoom_complete == false:
+			if approximate_equal(self.zoom, zoom, 0.01):
+				self.zoom = zoom
+				zoom_complete = true
+			else:
+				self.zoom = lerp(self.zoom, Vector2.ONE * zoom, 8 * delta)
+
+		# 视角移动未完成, 继续移动直至达到容许范围
+		if pos_complete == false:
+			if approximate_equal(self.position, position, 1):
+				self.position = position
+				pos_complete = true
+			else:
+				self.position = lerp(self.position, position, 6 * delta)
+
+		# 记录帧时间, 模拟在`self._process`中的效果
+		var former_ms = OS.get_ticks_msec()
+		yield(get_tree(), "idle_frame")
+		delta = (OS.get_ticks_msec() - former_ms) / 1000.0
+
+	# 缩放结束
+	self.in_zooming = false
+
+
 func _unhandled_input(event: InputEvent) -> void:
 	"""处理鼠标拖动及滚轮滚动"""
 	
@@ -52,7 +91,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		if event.button_index == BUTTON_LEFT:
 			
 			# 画面未经放大或处在缩放过程中, 不允许拖动
-			if approximate_equal(self.zoom, Vector2.ONE * max_zoom) or self.move_in_zoom_flag:
+			if approximate_equal(self.zoom, Vector2.ONE * max_zoom) or self.in_zooming:
 				return
 				
 			if event.is_pressed():
@@ -66,10 +105,9 @@ func _unhandled_input(event: InputEvent) -> void:
 		elif (
 			event.button_index == BUTTON_WHEEL_UP
 			and not approximate_equal(self.zoom, Vector2.ONE * self.min_zoom, 0.1)
+			and not self.in_zooming
 		):
-			self.target_zoom = min_zoom
-			self.move_in_zoom_flag = true
-			
+			var target_position = self.origin_position
 			for dic in self.LOCATE_POINT.values():
 				if (
 					dic["rect"]["left"] <= event.position[0]
@@ -77,17 +115,17 @@ func _unhandled_input(event: InputEvent) -> void:
 					and dic["rect"]["top"] <= event.position[1]
 					and event.position[1] < dic["rect"]["bottom"]
 				):
-					self.target_position = dic["position"]
+					target_position = dic["position"]
 					break
+			self.zoom_to(Vector2.ONE * min_zoom, target_position)
 
 		# 鼠标滚轮向下, 复原至原始画面
 		elif (
 			event.button_index == BUTTON_WHEEL_DOWN
 			and not approximate_equal(self.zoom, Vector2.ONE * self.max_zoom, 0.1)
+			and not self.in_zooming
 		):
-			self.target_zoom = max_zoom
-			self.target_position = origin_position
-			self.move_in_zoom_flag = true
+			self.zoom_to(Vector2.ONE * max_zoom, origin_position)
 
 	# 拖动画面, 但保证画面始终在版图内
 	if self.drag_flag:
@@ -97,14 +135,3 @@ func _unhandled_input(event: InputEvent) -> void:
 			clamp(new_position[0], CAMERA_BOUNDARY["left"], CAMERA_BOUNDARY["right"]),
 			clamp(new_position[1], CAMERA_BOUNDARY["top"], CAMERA_BOUNDARY["bottom"])
 		)
-
-func _process(delta: float) -> void:
-	"""用于平缓滚轮滚动时画面缩放及移动"""
-
-	if self.move_in_zoom_flag:
-		if approximate_equal(self.position, target_position, 1):
-			self.position = target_position
-			self.move_in_zoom_flag = false
-		else:
-			self.position = lerp(self.position, target_position, 6 * delta)
-	self.zoom = lerp(self.zoom, Vector2.ONE * target_zoom, 8 * delta)
